@@ -31,8 +31,6 @@ Developed as part of an advanced robotics course, this project serves as a stepp
 
 ## 👥 Members
 
-| Name | Role | Contact |
-|------|------|---------|
 | **[Member 1]** | Arturvpf
 | **[Member 2]** | Felipemfb
 | **[Member 3]** | Sannathan
