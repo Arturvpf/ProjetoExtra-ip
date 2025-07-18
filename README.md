@@ -29,15 +29,14 @@ This project demonstrates advanced robotic programming by controlling a Niryo On
 ### 🎓 Academic Context
 Developed as part of an advanced robotics course, this project serves as a stepping stone from simulation to real-world robotics applications. Teams that successfully complete the simulation phase are eligible to test their algorithms on actual Niryo One hardware.
 
-## 👥 Team Members
+## 👥 Members
 
 | Name | Role | Contact |
 |------|------|---------|
-| **[Team Member 1]** | Lead Developer & Algorithm Design | [email@example.com] |
-| **[Team Member 2]** | Simulation Integration & Testing | [email@example.com] |
-| **[Team Member 3]** | Documentation & Quality Assurance | [email@example.com] |
+| **[Member 1]** | 
+| **[Member 2]** | 
+| **[Member 3]** | 
 
-*Please update the table above with your team information*
 
 ## ✨ Features
 
