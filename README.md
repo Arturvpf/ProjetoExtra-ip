@@ -1,4 +1,4 @@
-# 🤖 Niryo One Robotic Arm Controller for CoppeliaSim
+# Niryo One Robotic Arm Controller for CoppeliaSim
 
 <div align="center">
 
@@ -6,52 +6,56 @@
 ![C Language](https://img.shields.io/badge/Language-C-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-Educational-yellow.svg)
 
-*An advanced robotic arm control system for simulating electronic voting processes using the Niryo One robot in CoppeliaSim environment*
+*A C program to control the Niryo One robotic arm for simulating electronic voting processes in CoppeliaSim*
 
 </div>
 
-## 📋 Table of Contents
-- [Project Overview](#-project-overview)
-- [Team Members](#-team-members)
-- [Features](#-features)
-- [Project Architecture](#-project-architecture)
-- [Installation & Setup](#-installation--setup)
-- [Usage Guide](#-usage-guide)
-- [File Structure](#-file-structure)
-- [API Reference](#-api-reference)
-- [Contributing](#-contributing)
-- [Resources](#-resources)
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Team Members](#team-members)
+- [Features](#features)
+- [Project Architecture](#project-architecture)
+- [Installation & Setup](#installation--setup)
+- [Usage Guide](#usage-guide)
+- [File Structure](#file-structure)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [Resources](#resources)
 
-## 🎯 Project Overview
+## Project Overview
 
-This project demonstrates advanced robotic programming by controlling a Niryo One robotic arm within the CoppeliaSim simulation environment. The system reads numeric sequences from input files and translates them into precise robotic movements, simulating an electronic voting process where the arm "presses" virtual buttons corresponding to each digit.
+This project is an optional assignment for the Introduction to Programming course in Computer Engineering at UFPE. The objective is to develop a C program that controls the Niryo One robotic arm in the CoppeliaSim simulator to simulate electronic voting processes.
 
-### 🎓 Academic Context
-Developed as part of an advanced robotics course, this project serves as a stepping stone from simulation to real-world robotics applications. Teams that successfully complete the simulation phase are eligible to test their algorithms on actual Niryo One hardware.
+The program reads voting sequences from a text file and translates them into precise robotic movements, where the arm "presses" virtual buttons corresponding to each digit in the voting sequence.
 
-## 👥 Members
+### Academic Context
+This is the first phase of the robotics project. Only teams that successfully complete the simulation phase will be eligible to proceed to the practical phase using the real Niryo One robot. The project deliverable is a short video (maximum 5 minutes) explaining the developed solution.
 
-| **[Member 1]** | Arturvpf
-| **[Member 2]** | Felipemfb
-| **[Member 3]** | Sannathan
+## Team Members
+
+| Name | GitHub |
+|------|--------|
+| **Artur Vinicius Pereira Fernandes** | (arturvpf) |
+| **Nathan Barbosa** | (sannathan) |
+| **Felipe Mateus Falcao Barreto** | (felipemfb) | 
 
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-- 🔗 **CoppeliaSim Integration**: Seamless connection via remote API
-- 📖 **File-based Input**: Reads voting sequences from configurable text files
-- 🎯 **Precision Control**: Accurate joint positioning for digit selection
-- 🔄 **Automatic Reset**: Returns to home position after each sequence
-- ⚡ **Real-time Feedback**: Console logging for operation status
+- **CoppeliaSim Integration**: Seamless connection via remote API
+- **File-based Input**: Reads voting sequences from configurable text files
+- **Precision Control**: Accurate joint positioning for digit selection
+- **Automatic Reset**: Returns to home position after each sequence
+- **Real-time Feedback**: Console logging for operation status
 
 ### Advanced Features
-- 🎛️ **Modular Architecture**: Separate functions for different arm movements
-- 🛡️ **Error Handling**: Robust file I/O and connection management
-- 📊 **Configurable Timing**: Adjustable delays for different movement phases
-- 🔧 **Easy Calibration**: Simple parameter adjustment for different setups
+- **Modular Architecture**: Separate functions for different arm movements
+- **Error Handling**: Robust file I/O and connection management
+- **Configurable Timing**: Adjustable delays for different movement phases
+- **Easy Calibration**: Simple parameter adjustment for different setups
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```
 CoppeliaSim Environment
@@ -65,7 +69,7 @@ Joint Position Commands
 Niryo One Simulation
 ```
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - **CoppeliaSim 4.3+** - [Download here](https://www.coppeliarobotics.com/downloads)
@@ -92,7 +96,7 @@ Niryo One Simulation
    echo "67890" >> voting_sequences.txt
    ```
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### Basic Usage
 1. **Start CoppeliaSim** and load the Niryo One scene
@@ -111,23 +115,20 @@ Niryo One Simulation
 - **Connection Settings**: Update IP/port in source code if needed
 - **Movement Parameters**: Adjust joint angles and timing in the arrays
 
-## 📁 File Structure
+## File Structure
 
 ```
 ProjetoExtra-ip/
-├── 📄 niryo_controller.c          # Main robotic arm controller
-├── 📄 niryo_advanced_controller.c # Advanced version with extended features  
-├── 📄 voting_sequences.txt        # Input sequences for voting simulation
-├── 📄 example_sequences.txt       # Additional example input data
-├── 📁 src/
-│   └── 📄 main.c                  # Alternative main implementation
-├── 📁 docs/
-│   ├── 📄 API_Reference.md        # Detailed API documentation
-│   └── 📄 Setup_Guide.md          # Comprehensive setup instructions
-└── 📄 README.md                   # This documentation file
+├── niryo_controller.c          # Main robotic arm controller
+├── niryo_advanced_controller.c # Advanced version with extended features  
+├── voting_sequences.txt        # Input sequences for voting simulation
+├── example_sequences.txt       # Additional example input data
+├── Main/
+│   └── main.c                  # Alternative main implementation
+└── README.md                   # This documentation file
 ```
 
-## 🔧 API Reference
+## API Reference
 
 ### Core Functions
 - `InitialPosition()` - Moves arm to home/zero position
@@ -139,7 +140,7 @@ ProjetoExtra-ip/
 - `numj3[]`, `numj2[]`, `numj1[]` - Joint positions for digits 0-9
 - `t1[]`, `t2[]`, `t3[]`, `t4[]` - Timing arrays for movement phases
 
-## 🤝 Contributing
+## Contributing
 
 ### Development Guidelines
 1. Follow consistent C coding standards
@@ -152,12 +153,12 @@ ProjetoExtra-ip/
 - Include CoppeliaSim version and system information
 - Provide input files that reproduce the issue
 
-## 📚 Resources
+## Resources
 
 ### Official Documentation
 - [CoppeliaSim Download](https://www.coppeliarobotics.com/downloads) - Get the latest version
 - [CoppeliaSim Documentation](https://www.coppeliarobotics.com/helpFiles/index.html) - Complete API reference
-- [Niryo One Documentation](https://docs.niryo.com/) - Robot specifications
+- [Project Drive Folder](https://drive.google.com/drive/folders/1UEslC_PPhohbdYZ5a6dVI-MGLrZ6fo_R?usp=share_link) - Project details and requirements
 
 ### Learning Materials
 - [YouTube - CoppeliaSim C Setup](https://www.youtube.com/watch?v=gQTDW-8lxTI&ab_channel=NareshMarturi) - Setup tutorial
@@ -169,17 +170,20 @@ ProjetoExtra-ip/
 - [Joint Control Examples](https://www.coppeliarobotics.com/helpFiles/en/jointCtrlCallbackScript.htm)
 - [C Remote API Functions](https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctions.htm)
 
-## 📄 License
+## License
 
-This project is developed for educational purposes as part of an academic robotics course. Feel free to use and modify the code for learning and educational applications.
+This project is developed for educational purposes as part of the Introduction to Programming course in Computer Engineering at UFPE. Feel free to use and modify the code for learning and educational applications.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **Course Instructors** - For providing the challenge framework and guidance
+- **Course Instructors** - For providing the optional robotics project framework
 - **CoppeliaSim Team** - For the excellent simulation environment
 - **Niryo Robotics** - For the open-source robot platform
-- **Academic Institution** - For supporting hands-on robotics education
+- **UFPE Computer Engineering Program** - For supporting hands-on robotics education
 
 ---
-Feel free to adapt and expand this project for your own robotic simulation experiments!
-Projeto extra da cadeira de introdução a programação do curso de engenharia da computação
+
+**Optional Project - Introduction to Programming Course**  
+*Computer Engineering - UFPE*
+
+*Note: This is the simulation phase of the project. Only teams that successfully complete this phase will be eligible for the practical phase with the real Niryo One robot.*
