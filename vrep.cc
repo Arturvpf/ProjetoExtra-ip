@@ -1,6 +1,9 @@
 //codigo de joao
 
-#define PI 3.14
+
+// Robotic Arm Control Example for CoppeliaSim
+// Author: Joao (original), comments and English translation by Artur
+// This code demonstrates how to control a robotic arm using the CoppeliaSim remote API.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,11 +28,11 @@ void carregaVotos(int* qtdVotos, char*** votos){
     FILE* arq;
     char voto[100];
     arq = fopen("votos.txt", "r");
-    int digitos = 0;
+    arq = fopen("votes.txt", "r");
     if (arq == NULL)
     {
         printf("Nao foi possivel computar votos\n"); exit(1);
-    }
+        printf("Could not load votes file\n"); exit(1);
     while (!feof(arq)){
         fscanf(arq, "%99[^\n]\n", voto);
         digitos = strlen(voto);
@@ -41,15 +44,17 @@ void carregaVotos(int* qtdVotos, char*** votos){
     }
     fclose(arq);
 }
-float radian(float grau){
-    float rad;
-    rad = (grau * PI) / 180;
 
+// Convert degrees to radians
+float radian(float degrees) {
+    float rad;
+    rad = (degrees * PI) / 180;
     return rad;
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
+    printf("=== Niryo One Voting System (Alternative Implementation) ===\n");
+    
     char** votos = NULL;
     int qtdVotos = 0;
 
@@ -57,24 +62,26 @@ int main(int argc, char* argv[])
 
     int handler = 0;
 
-    int clientID = simxStart((simxChar*) "127.0.0.1", 19999, true, true, 2000, 5);
-
+    // Connect to CoppeliaSim
+    int clientID = simxStart((simxChar*)"127.0.0.1", 19999, true, true, 2000, 5);
     extApi_sleepMs(500);
 
     if (clientID == -1) {
-        printf("Erro conectando ao Coppelia!\n");
+        printf("ERROR: Failed to connect to CoppeliaSim!\n");
         return 0;
     } else {
-        printf("Conectado ao Coppelia!\n");
+        printf("SUCCESS: Connected to CoppeliaSim!\n");
     }
     
+    // Process each vote sequence
     for (int i = 0; i < qtdVotos; i++) {
         int k = strlen(votos[i]);
-        printf("voto #%d/%d = %s\n", i + 1, qtdVotos, votos[i]);
+        printf("Processing vote #%d/%d = %s\n", i + 1, qtdVotos, votos[i]);
 
-            for (int j = 0; j < k; j++) {
-                if (votos[i][j] == '1'){
-                    simxChar handlerName1[150] = "/NiryoOne/Joint";
+        // Process each digit in the vote sequence
+        for (int j = 0; j < k; j++) {
+            if (votos[i][j] == '1') {
+                simxChar handlerName1[150] = "/NiryoOne/Joint";
 
                     simxGetObjectHandle(clientID, handlerName1, &handler, (simxInt)simx_opmode_oneshot_wait);
 
